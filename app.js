@@ -3,8 +3,8 @@ let amigos = [];
 
 // Função para adicionar um amigo à lista
 function adicionarAmigo() {
-    let inputAmigo = document.getElementById("amigo");
-    let nomeAmigo = inputAmigo.value.trim();
+    const inputAmigo = document.getElementById("amigo");
+    const nomeAmigo = inputAmigo.value.trim();
 
     if (nomeAmigo === "") {
         alert("Por favor, insira um nome válido.");
@@ -21,15 +21,15 @@ function adicionarAmigo() {
 
 // Função para atualizar a lista de amigos exibida
 function atualizarListaAmigos() {
-    let listaAmigos = document.getElementById("listaAmigos");
+    const listaAmigos = document.getElementById("listaAmigos");
     listaAmigos.innerHTML = ""; // Limpa a lista atual
 
     amigos.forEach((amigo, index) => {
-        let li = document.createElement("li");
+        const li = document.createElement("li");
         li.textContent = amigo;
 
         // Botão para remover o nome
-        let btnRemover = document.createElement("button");
+        const btnRemover = document.createElement("button");
         btnRemover.textContent = "Remover";
         btnRemover.classList.add("button-remove");
         btnRemover.onclick = () => removerAmigo(index);
@@ -52,10 +52,10 @@ function sortearAmigo() {
         return;
     }
 
-    let indiceAleatorio = Math.floor(Math.random() * amigos.length);
-    let amigoSorteado = amigos[indiceAleatorio];
+    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    const amigoSorteado = amigos[indiceAleatorio];
 
     // Exibe o resultado na tela
-    let resultado = document.getElementById("resultado");
+    const resultado = document.getElementById("resultado");
     resultado.innerHTML = `<li>O amigo sorteado é: <strong>${amigoSorteado}</strong></li>`;
 }
